@@ -9,7 +9,7 @@ COPY system_files /system_files
 # FROM ghcr.io/ublue-os/bazzite:testing
 # FROM ghcr.io/ublue-os/aurora:stable
 # FROM ghcr.io/ublue-os/bluefin-nvidia-open:stable
-FROM  quay.io/rakuos/rakuos-base:latest
+FROM ghrc.io/rakuos/rakuos-hyprland:latest
 # 
 # ... and so on, here are more base images
 # Universal Blue Images: https://github.com/orgs/ublue-os/packages
