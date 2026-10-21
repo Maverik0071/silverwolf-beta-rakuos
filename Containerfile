@@ -9,8 +9,12 @@ COPY system_files /system_files
 # FROM ghcr.io/ublue-os/bazzite:testing
 # FROM ghcr.io/ublue-os/aurora:stable
 # FROM ghcr.io/ublue-os/bluefin-nvidia-open:stable
-FROM quay.io/rakuos/rakuos-hyprland:latest
-# 
+#FROM quay.io/rakuos/rakuos-hyprland:latest
+#FROM quay.io/rakuos/rakuos-<desktop>[-nvidia|-nvidia-legacy][-v3|-v4]:<latest|staging>
+FROM quay.io/rakuos/rakuos-hyprland-nvidia-legacy-v3:latest
+
+
+
 # ... and so on, here are more base images
 # Universal Blue Images: https://github.com/orgs/ublue-os/packages
 # Fedora base image: quay.io/fedora/fedora-bootc:44
