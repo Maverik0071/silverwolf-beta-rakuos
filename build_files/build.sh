@@ -5,8 +5,8 @@ set -ouex pipefail
 # Copy the contents of system_files/ of the git repo to /
 cp -avf "/ctx/system_files"/. /
 
-#dnf5 -y install dnf5-plugins
-dnf5 -y copr enable tohur/RakuOS fedora-${FEDORA_VERSION}-x86_64
+dnf5 -y install dnf5-plugins
+#dnf5 -y copr enable tohur/RakuOS fedora-${FEDORA_VERSION}-x86_64
 #dnf5 -y copr enable bieszczaders/kernel-cachyos fedora-${FEDORA_VERSION}-x86_64
 #dnf5 -y copr enable bieszczaders/kernel-cachyos-addons fedora-${FEDORA_VERSION}-x86_64
 #dnf5 -y copr enable faugus/faugus-launcher fedora-${FEDORA_VERSION}-x86_64
@@ -117,13 +117,13 @@ dnf5 install -y virtualbox-guest-additions
 dnf5 install -y v4l-utils
 dnf5 install -y unzip
 #dnf5 install -y docker
-dnf5 install -y rakuos-welcome-qt
-dnf5 install -y rakuos-software-qt
+#dnf5 install -y rakuos-welcome-qt
+#dnf5 install -y rakuos-software-qt
 #dnf5 install -y greetd
 dnf5 install -y opensc
 dnf5 install -y ccid
-dnf5 install -y terra-release-extras
-dnf5 install -y terra-release-mesa
+#dnf5 install -y terra-release-extras
+#dnf5 install -y terra-release-mesa
 dnf5 install -y kitty
 
 # enable flathub
