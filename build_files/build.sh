@@ -91,7 +91,7 @@ dnf5 install -y vim
 #dnf5 install -y waypaper
 dnf5 install -y xkill
 dnf5 install -y zsh
-dnf5 install -y lightdm
+#dnf5 install -y lightdm
 #dnf5 install -y cachyos-ananicy-rules
 #dnf5 install -y cachyos-settings 
 #dnf5 install -y bore-sysctl 
@@ -116,7 +116,7 @@ dnf5 install -y squashfuse
 dnf5 install -y virtualbox-guest-additions
 dnf5 install -y v4l-utils
 dnf5 install -y unzip
-dnf5 install -y docker
+#dnf5 install -y docker
 dnf5 install -y rakuos-welcome-qt
 dnf5 install -y rakuos-software-qt
 #dnf5 install -y greetd
