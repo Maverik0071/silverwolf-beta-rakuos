@@ -13,8 +13,8 @@ cp -avf "/ctx/system_files"/. /
 #dnf5 -y copr enable ilyaz/LACT fedora-${FEDORA_VERSION}-x86_64
 #dnf5 -y copr enable garecrow/ExtensionManager fedora-${FEDORA_VERSION}-x86_64
 #dnf5 -y copr enable wehagy/protonplus fedora-${FEDORA_VERSION}-x86_64
-dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
-dnf5 -y config-manager --add-repo https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+#dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+#dnf5 -y config-manager --add-repo https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
 
 
 #dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-nvidia.repo
@@ -30,22 +30,22 @@ dnf5 -y config-manager --add-repo https://github.com/terrapkg/subatomic-repos/ra
 #sed -i '/^priority=/d' /etc/yum.repos.d/terra*.repo
 
 # Download Terra AppStream data for rakuos-software
-TERRA_BASE="https://repos.fyralabs.com/appstream"
-TERRA_REPOS="terra${FEDORA_VERSION} terra${FEDORA_VERSION}-mesa terra${FEDORA_VERSION}-nvidia terra${FEDORA_VERSION}-extras terra${FEDORA_VERSION}-multimedia"
-mkdir -p /usr/share/swcatalog/xml
-for REPO in $TERRA_REPOS; do
-    BASE_URL="${TERRA_BASE}/${REPO}/latest/appstream"
+#TERRA_BASE="https://repos.fyralabs.com/appstream"
+#TERRA_REPOS="terra${FEDORA_VERSION} terra${FEDORA_VERSION}-mesa terra${FEDORA_VERSION}-nvidia terra${FEDORA_VERSION}-extras terra${FEDORA_VERSION}-multimedia"
+#mkdir -p /usr/share/swcatalog/xml
+#for REPO in $TERRA_REPOS; do
+#    BASE_URL="${TERRA_BASE}/${REPO}/latest/appstream"
     # AppStream XML
-    curl -fsSL "${BASE_URL}/${REPO}.xml.gz" -o "/usr/share/swcatalog/xml/${REPO}.xml.gz" \
-        && echo "Terra AppStream: ${REPO}.xml.gz" || echo "Warning: failed to download AppStream for ${REPO}"
+#    curl -fsSL "${BASE_URL}/${REPO}.xml.gz" -o "/usr/share/swcatalog/xml/${REPO}.xml.gz" \
+#        && echo "Terra AppStream: ${REPO}.xml.gz" || echo "Warning: failed to download AppStream for ${REPO}"
    # Icons — 64x64 and 128x128
-    mkdir -p "/usr/share/swcatalog/icons/${REPO}/64x64"
-    mkdir -p "/usr/share/swcatalog/icons/${REPO}/128x128"
-    curl -fsSL "${BASE_URL}/${REPO}-icons-64x64.tar.gz" \
-        | tar -xz -C "/usr/share/swcatalog/icons/${REPO}/64x64" --strip-components=1 2>/dev/null || true
-    curl -fsSL "${BASE_URL}/${REPO}-icons-128x128.tar.gz" \
-        | tar -xz -C "/usr/share/swcatalog/icons/${REPO}/128x128" --strip-components=1 2>/dev/null || true
-    done
+#    mkdir -p "/usr/share/swcatalog/icons/${REPO}/64x64"
+#    mkdir -p "/usr/share/swcatalog/icons/${REPO}/128x128"
+#    curl -fsSL "${BASE_URL}/${REPO}-icons-64x64.tar.gz" \
+#        | tar -xz -C "/usr/share/swcatalog/icons/${REPO}/64x64" --strip-components=1 2>/dev/null || true
+#    curl -fsSL "${BASE_URL}/${REPO}-icons-128x128.tar.gz" \
+#        | tar -xz -C "/usr/share/swcatalog/icons/${REPO}/128x128" --strip-components=1 2>/dev/null || true
+#    done
 
 #remove fedora kernel and zram config
 #dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-tools kernel-tools-libs zram-generator-defaults
