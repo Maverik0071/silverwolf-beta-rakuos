@@ -187,4 +187,4 @@ dnf5 -y copr disable bytehackr/Security-Tools
 
 
 systemctl enable podman.socket
-systemctl enable pcsd
+# systemctl enable pcsd
